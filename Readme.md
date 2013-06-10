@@ -7,13 +7,13 @@ chef.add_recipe "virtualhosts"
     chef.json = {
         :virtualhosts => [
         	{
-        		"file_name" => "public-singring",
+        		"file_name" => "public-dd",
         		"server_name" => "api-dev.local",
         		"docroot" => "/var/www/SRAPI2/public",
         		"template" => "app"
         	},
         	{
-        		"file_name" => "private-singring",
+        		"file_name" => "private-dd",
         		"server_name" => "private-dev.local",
         		"docroot" => "/var/www/SRAPI2/private",
         		"template" => "app"
