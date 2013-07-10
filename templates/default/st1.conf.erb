@@ -1,0 +1,14 @@
+<VirtualHost *:80 >
+    DocumentRoot <%= @params[:docroot] %>
+    ServerName <%= @params[:server_name] %>
+    ErrorLog <%= @node[:apache][:log_dir] %>/<%= @params[:name] %>-error.log
+    CustomLog <%= @node[:apache][:log_dir] %>/<%= @params[:name] %>-access.log combined
+    DirectoryIndex 403.json
+    ErrorDocument 404 /403.json
+    <Location />
+        Order deny,allow
+        Allow from all
+    </Location>
+    AddType application/x-httpd-php .php .phtml
+    setEnv APPLICATION_ENV staging
+</VirtualHost>
